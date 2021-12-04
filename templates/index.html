@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <!-- CSS -->
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+      <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="static/css/form-elements.css">
+      <link rel="stylesheet" href="static/css/style.css">
+   </head>
+
+   <body>
+       <!--HEADER WITH LOGO-->
+      <div class="header">
+         <img src="../static/logo.png" class="img-thumbnail" alt="Responsive image" style="width:150px;height:150px;border:0">
+         <h1 style="height:200px;">Twitter Sentiment Analyzer</h1>
+      </div>
+      <!--SMALL DESCRIPTION-->
+      <div class="Description" style="height:200px;">
+         <p>
+            Find out what people think about a topic in real-time. 
+         </p>
+      </div>
+      <!--MAIN BODY CONTENT FOR SEARCH AND SENTIMENT-->
+      <div class="row">
+         <div class="form-bottom">
+            <form role="form" id="form" class="login-form">
+               <!--SEARCH BAR FOR TOPIC-->
+                <div class="search-box">
+                  <input type="text" name="tweet_search" placeholder="Search for a Topic" class="form-username form-control" id="form-username">
+               </div>
+               <div class="row">
+                  <div class="col-sm-3">
+                      <!--BUTTON FOR POSITIVE TWEETS-->
+                     <div class="row search_tweets">
+                        <button  data-toggle="tooltip" data-placement="left" title="Positive" class="btn" id="psenti">Search Positive Sentiment</button>
+                     </div>
+                  </div>
+                  <!--BUTTON FOR ALL TWEETS-->
+                  <div class="col-sm-6">
+                     <button id="search_btn" class="btn">Search All Tweets</button>
+                  </div>
+                  <!--BUTTON FOR NEGATIVE TWEETS-->
+                  <div class="col-sm-3">
+                     <button  data-toggle="tooltip" data-placement="left" title="Negative"  class="btn" id="nsenti">Search Negative Sentiment</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+      <p class="love">Created by Team Corner for OSINT Fall 2021</p>
+      <!--DISPLAY RESULTS IN LIST-->
+      <div id="search_result">
+         <ol id="search_list">
+         </ol>
+      </div>
+      </div>
+      </div>
+      </div>
+      <!-- Javascript -->
+      <script src="static/js/jquery-1.11.1.min.js"></script>
+      <script src="static/bootstrap/js/bootstrap.min.js"></script>
+      <script src="{{ url_for('static',filename='index.js') }}"></script>
+   </body>
+</html>
